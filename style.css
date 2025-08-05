@@ -201,7 +201,7 @@ nav {
 /* --- Hometown Section --- */
 #hometown {
     /* IMPORTANT: Replace 'murbad.jpg' with the name of your hometown image file */
-    background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('murbad.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('IMG_2446.jpeg') no-repeat center center/cover;
     background-attachment: fixed; /* This creates the cool parallax effect */
     color: white;
     text-align: center;
