@@ -83,7 +83,7 @@ nav {
     align-items: center;
     text-align: center;
     color: white;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1533162507191-d90c625b2640?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
     /* You can replace the above URL with another one from unsplash.com, or a photo of your own */
 }
 
