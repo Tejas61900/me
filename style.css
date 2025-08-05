@@ -1,0 +1,315 @@
+/* style.css */
+
+/* --- Universal Settings & Variables --- */
+:root {
+    --primary-color: #2c3e50; /* A dark, professional blue-slate */
+    --secondary-color: #386641; /* A calming, natural green */
+    --background-color: #fdfdfd; /* A very light, clean background */
+    --text-color: #333;
+    --heading-font: 'Merriweather', serif;
+    --body-font: 'Lato', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--body-font);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* --- Header & Navigation --- */
+header {
+    background-color: rgba(255, 255, 255, 0.9);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    backdrop-filter: blur(5px);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+}
+
+.logo {
+    font-family: var(--heading-font);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--secondary-color);
+}
+
+
+/* --- Hero Section --- */
+#hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
+    /* You can replace the above URL with another one from unsplash.com, or a photo of your own */
+}
+
+.hero-content h1 {
+    font-family: var(--heading-font);
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    font-family: var(--body-font);
+}
+
+.typing-effect {
+    font-weight: 700;
+    color: #a7c957; /* A lighter, more vibrant green for contrast */
+}
+
+/* --- General Content Section Styling --- */
+.content-section {
+    padding: 6rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    opacity: 0; /* Initially hidden for fade-in effect */
+    transform: translateY(20px); /* Slightly moved down */
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.content-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-title {
+    font-family: var(--heading-font);
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+}
+
+/* --- About Section --- */
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+.about-image {
+    flex: 1;
+}
+.about-image img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.about-text {
+    flex: 2;
+}
+
+/* --- Journey Timeline --- */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background-color: var(--secondary-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1.5px;
+}
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+}
+.timeline-item:nth-child(odd) {
+    left: 0;
+}
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    background-color: var(--background-color);
+    border: 4px solid var(--secondary-color);
+    top: 25px;
+    border-radius: 50%;
+    z-index: 1;
+}
+.timeline-item:nth-child(even)::after {
+    left: -10px;
+}
+.timeline-content {
+    padding: 20px 30px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+.timeline-content h3 {
+    font-family: var(--heading-font);
+    color: var(--secondary-color);
+}
+
+/* --- Hometown Section --- */
+#hometown {
+    /* IMPORTANT: Replace 'murbad.jpg' with the name of your hometown image file */
+    background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('murbad.jpg') no-repeat center center/cover;
+    background-attachment: fixed; /* This creates the cool parallax effect */
+    color: white;
+    text-align: center;
+    padding: 8rem 2rem;
+}
+#hometown h2 {
+    font-family: var(--heading-font);
+    font-size: 2.5rem;
+}
+
+/* --- Education Section --- */
+.education-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+.education-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.education-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+.education-card i {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+.education-card ul {
+    list-style: none;
+    padding: 0;
+}
+.education-card li {
+    margin: 0.5rem 0;
+}
+
+
+/* --- Contact Section --- */
+#contact {
+    text-align: center;
+    background-color: #f4f4f4;
+}
+.contact-subtitle {
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+}
+.contact-links a {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 0.5rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.contact-links a:hover {
+    background-color: #2a4830;
+    transform: translateY(-3px);
+}
+.contact-links i {
+    margin-right: 0.5rem;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* --- Responsive Design for Mobile --- */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide nav links on mobile, or create a hamburger menu */
+    }
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .timeline::after {
+        left: 31px;
+    }
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+    .timeline-item:nth-child(even) {
+        left: 0;
+    }
+    .timeline-item::after {
+        left: 21px;
+    }
+    .education-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
